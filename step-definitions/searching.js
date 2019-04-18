@@ -13,9 +13,9 @@ When(/^the user enters "([^"]*)" into the search bar$/, async (thingToSearch) =>
 });
 
 Then(/^results are showed$/, async () => {
-    await homepage;
+    await homepage.isResultsListShowed();
 });
 
 Then(/^message that no results where found for "([^"]*)" is showed$/, searchedProduct => {
-    return homepage;
+    return homepage.isNoResultsInfoShowed(searchedProduct);
 });
