@@ -1,3 +1,4 @@
+@search
 Feature: Searching proudcts
     As a user,
     I want to search products I want to buy,

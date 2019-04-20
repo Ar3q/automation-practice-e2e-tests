@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "e2e-test": "cucumber-js --require cucumber.conf.js --require step-definitions --format node_modules/cucumber-pretty"
+    "e2e-test": "cucumber-js --require cucumber.conf.js --require step-definitions --format node_modules/cucumber-pretty",
+    "e2e-test-search": "npm run e2e-test -- --tags @search",
+    "e2e-test-register": "npm run e2e-test -- --tags @register"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "randomstring": "^1.1.5"
+  },
   "devDependencies": {
     "chromedriver": "^73.0.0",
     "cucumber": "^5.1.0",
