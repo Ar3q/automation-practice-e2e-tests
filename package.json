@@ -6,7 +6,8 @@
   "scripts": {
     "e2e-test": "cucumber-js --require cucumber.conf.js --require step-definitions --format node_modules/cucumber-pretty",
     "e2e-test-search": "npm run e2e-test -- --tags @search",
-    "e2e-test-register": "npm run e2e-test -- --tags @register"
+    "e2e-test-register": "npm run e2e-test -- --tags @register",
+    "e2e-test-newsletter": "npm run e2e-test -- --tags @newsletter"
   },
   "author": "",
   "license": "ISC",

@@ -1,3 +1,5 @@
+const generateRandomEmail = require('../helpers/generateRandomEmail');
+
 module.exports = {
     url: 'http://automationpractice.com',
     elements: {
@@ -5,7 +7,11 @@ module.exports = {
         searchSubmitButton: '.button-search',
         resultsList: 'ul[class="product_list grid row"]',
         noResultsInfo: 'p[class="alert alert-warning"]',
-        signInButton: '.login'
+        signInButton: '.login',
+        emailForNewsletterInput: '.newsletter-input',
+        submitNewsletter: 'button[name="submitNewsletter"]',
+        successInfoAboutNewsletter: 'p[class="alert alert-success"]',
+        noSuccessInfoAboutNewsletter: 'p[class="alert alert-danger"]',
     },
     commands: [{
         async setQuery(value){
@@ -25,6 +31,15 @@ module.exports = {
         clickSignInButton(text){
             this.assert.containsText('@signInButton', text);
             return this.click('@signInButton')
-        }
+        },
+        signUpWithEmailForNewsletter(email){
+            if (email === undefined){
+                email = generateRandomEmail.generateRandomEmail();
+            }
+            
+            this.setValue('@emailForNewsletterInput', email);
+
+            return this.click('@submitNewsletter');
+        },
     }]
 }
