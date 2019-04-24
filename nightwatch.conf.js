@@ -1,5 +1,3 @@
-const chromedriver = require('chromedriver');
-
 module.exports = {
     "src_folders": ["tests"],
     "page_objects_path": ['page-objects'],

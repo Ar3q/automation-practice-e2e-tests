@@ -10,8 +10,6 @@ module.exports = {
     commands: [{
         fillEmailRegisterField() {
             const email = generateRandomEmail.generateRandomEmail();
-            console.log('Generated email: '+ email);
-
             return this.setValue('@emailRegisterInput', email);
         },
         clickCreateAccountButton() {

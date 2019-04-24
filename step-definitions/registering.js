@@ -26,6 +26,7 @@ When(/^user enter valid email$/, () => {
     return registerAndSignInPage.fillEmailRegisterField();
 });
 
+// eslint-disable-next-line no-unused-vars
 When(/^clicks "([^"]*)"$/, (buttonText) => {
     return registerAndSignInPage.clickCreateAccountButton();
 });

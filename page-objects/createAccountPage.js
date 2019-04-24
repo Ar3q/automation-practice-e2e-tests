@@ -1,4 +1,3 @@
-const formatSelector = require('../helpers/formatSelector');
 
 module.exports = {
     url: 'http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation',

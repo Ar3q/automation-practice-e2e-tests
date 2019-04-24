@@ -4,11 +4,11 @@ const { createSession, closeSession, startWebDriver, stopWebDriver } = require('
 setDefaultTimeout(60000);
 
 BeforeAll(async () => {
-  await startWebDriver();
-  await createSession();
+    await startWebDriver();
+    await createSession();
 });
 
 AfterAll(async () => {
-  await closeSession();
-  await stopWebDriver();
+    await closeSession();
+    await stopWebDriver();
 });
