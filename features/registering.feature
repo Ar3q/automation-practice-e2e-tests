@@ -14,7 +14,7 @@ Feature: Creating an account
         When user enter valid email
         And clicks "Create an account"
         Then form with more informations to enter is showed
-    @third
+    @third @need-to-sign-out
     Scenario Outline: Fill form to register
         Given a page with personal information form
         When the first name "<first>" is entered by user
@@ -27,7 +27,6 @@ Feature: Creating an account
         And mobile phone "<number>" is typed
         And user clicks "Register" button to register
         Then user is registered
-        And sign out
 
         Examples:
             | first    | last          | password    | address           | city      | state   | zipcode | number    |

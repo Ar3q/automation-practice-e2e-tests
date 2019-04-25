@@ -5,7 +5,10 @@ module.exports = {
     elements: {
         emailRegisterInput: '#email_create',
         createAccountButton: '#SubmitCreate',
-        createAccountForm: '#create-account_form'
+        createAccountForm: '#create-account_form',
+        emailLoginInput: '#email',
+        passwordLoginInput: '#passwd',
+        submitLogin: '#SubmitLogin'
     },
     commands: [{
         fillEmailRegisterField() {
@@ -14,6 +17,11 @@ module.exports = {
         },
         clickCreateAccountButton() {
             return this.click('@createAccountButton');
+        },
+        login(email, password){
+            this.setValue('@emailLoginInput', email);
+            this.setValue('@passwordLoginInput', password);
+            return this.click('@submitLogin');
         }
     }]
 }

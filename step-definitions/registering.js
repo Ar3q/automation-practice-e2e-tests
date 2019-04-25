@@ -1,5 +1,5 @@
 const { client } = require('nightwatch-api');
-const { Given, Then, When } = require('cucumber');
+const { Given, Then, When, After } = require('cucumber');
 
 const homepage = client.page.homePageOfStore();
 const registerAndSignInPage = client.page.registerAndSignInPage();
@@ -82,6 +82,10 @@ Then(/^user is registered$/, () => {
     return accountOptionsPage.isBodyVisible();
 });
 
-Then(/^sign out$/, () => {
-    return accountOptionsPage.signOut();
-});
+After({tags: '@need-to-sign-out'}, function () {
+    // eslint-disable-next-line no-console
+    console.log('Signing out');
+    
+    // return accountOptionsPage.signOut();
+    return client.logout();
+})

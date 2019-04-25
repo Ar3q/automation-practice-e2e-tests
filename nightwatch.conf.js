@@ -1,6 +1,7 @@
 module.exports = {
     "src_folders": ["tests"],
     "page_objects_path": ['page-objects'],
+    "custom_commands_path": ['custom-commands'],
 
     "webdriver": {
         "start_process": true,
